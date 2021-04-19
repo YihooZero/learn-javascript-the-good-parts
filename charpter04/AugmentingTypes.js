@@ -4,6 +4,16 @@ Function.prototype.method = function (name, func) {
   }
   return this;
 }
+console.log(typeof Number === 'function')                          // true
+console.log(Object.getPrototypeOf(Number) === Function.prototype); // true
+console.log(Number.__proto__ === Function.prototype)               // true
+
+/*
+ * typeof Number === 'function' 说明Number是一个函数方法;
+ * 后两行代码说明 Number为Function构造函数的实例，Number上定义的属性
+ * 和方法会从Number实例上寻找，如果没有找到，则根据原型链向后查找
+ * NOTE:这也是为什么Number、String、Object可以直接调用method方法的根本原因
+ */
 
 // 取整
 Number.method('integer', function () {
