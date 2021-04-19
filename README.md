@@ -1,2 +1,2 @@
 # learn-javascript-the-good-parts
-JavaScript语音精粹学习笔记
+JavaScript语言精粹学习笔记
