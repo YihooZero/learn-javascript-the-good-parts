@@ -10,7 +10,7 @@
 
 ### 运算符优先级
 
-<table border="1" border-color="black">
+<table>
     <tbody>
         <tr>
             <td align="left" valign="middle">. [ ] ( )</td>
