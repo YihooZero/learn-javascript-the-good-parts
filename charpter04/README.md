@@ -40,8 +40,25 @@
 #### arguments
 >arguments并不是一个真正的数组，它只是一个“类似数组”的对象。arguments拥有一个length属性，但它没有任何数组方法
 
-#### Function.prototype.method原型图理解
+#### Function.prototype.method 原型图理解
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/prototype.png" alt="原型图"></p>
+
+### 1 vs Number(1) vs new Number(1)
+``` javascript
+    typeof 1                                        // 'number'
+    typeof Number(1)                                // 'number'
+    typeof new Number(1)                            // 'object'
+
+    1         === Number(1)                         // true
+    Number(1) === new Number(1)                     // false
+
+    1               instanceof Number               // false
+    (new Number(1)) instanceof Number               // true
+    
+    1..__proto__             === Number.prototype   // true
+    Number.__proto__         === Number.prototype   // true
+    (new Number()).__proto__ === Number.prototype   // true    
+```
 
 
 - [扩充类型的功能](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/AugmentingTypes.js)
