@@ -40,6 +40,9 @@
 #### arguments
 >arguments并不是一个真正的数组，它只是一个“类似数组”的对象。arguments拥有一个length属性，但它没有任何数组方法
 
+#### Function.prototype.method原型图理解
+<p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/imgs/prototype.png" alt="原型图"></p>
+
 
 - [扩充类型的功能](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/AugmentingTypes.js)
 - [递归算法](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/Recursion.js)
