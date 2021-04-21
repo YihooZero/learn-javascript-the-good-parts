@@ -13,7 +13,7 @@ console.log(Number.__proto__ === Function.prototype)               // true
  * 后两行代码说明 Number为Function构造函数的实例，Number上定义的属性
  * 和方法会从Number实例上寻找，如果没有找到，则根据原型链向后查找
  * NOTE:这也是为什么Number、String、Object可以直接调用method方法的根本原因
- * 参照原型图进行理解：https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/imgs/prototype.png
+ * 参照原型图进行理解：https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/prototype.png
  */
 
 // 取整

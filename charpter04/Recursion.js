@@ -1,4 +1,5 @@
 // 汉诺塔递归算法
+// 理解汉诺塔递归: https://www.zhihu.com/question/24385418
 var hanoi = function (disc, src, aux, dst) {
   if (disc > 0) {
     hanoi(disc - 1, src, dst, aux);
