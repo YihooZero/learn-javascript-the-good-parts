@@ -74,4 +74,4 @@
 
 
 - [扩充类型的功能](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/AugmentingTypes.js)
-- [递归算法(汉诺塔)](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/Recursion.js)
+- [递归算法(汉诺塔递归理解)](https://github.com/YihooZero/learn-javascript-the-good-parts/tree/main/charpter04/Recursion.js)
