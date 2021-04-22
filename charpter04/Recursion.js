@@ -19,3 +19,32 @@ var hanoi = function (disc, src, aux, dst) {
   }
 }
 hanoi(3, 'Src', 'Aux', 'Dst')
+
+/*
+ * 运用递归访问DOM数中的每个节点
+ * Step1: 对node进行一系列操作，即func(node)
+ * Step2: 判断是否有子节点，若有递归调用
+ * Step3: 判断是否有兄弟节点，若有递归调用
+ *
+ */
+var walk_the_DOM = function walk(node, func) {
+  func(node);
+  node = node.firstChild;
+  while (node) {
+    walk(node, func);
+    node = node.nextSibling;
+  }
+};
+
+walk_the_DOM(document.body, function (node) {
+  console.log(node);
+});
+
+// 上面递归没考虑到第一个DOM的兄弟节点
+// 下面这种写法更容易理解
+function walk(node, func) {
+  var children = node.childNodes;
+  for (var i = 0; i < children.length; i++)
+    walk(children[i], func);
+  func(node);
+}
