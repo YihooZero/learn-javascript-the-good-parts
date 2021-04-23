@@ -17,17 +17,16 @@ var hanoi = function (disc, src, aux, dst) {
     console.log('Move disc ' + disc + ' from ' + src + ' to ' + dst + '\n');
     hanoi(disc - 1, aux, src, dst);
   }
-}
+};
 hanoi(3, 'Src', 'Aux', 'Dst')
 
 /*
- * 运用递归访问DOM数中的每个节点
+ * 运用递归访问DOM树中的每个节点
  * Step1: 对node进行一系列操作，即func(node)
- * Step2: 判断是否有子节点，若有递归调用
- * Step3: 判断是否有兄弟节点，若有递归调用
- *
+ * Step2: 判断是否有第一个子节点，若有->递归调用
+ * Step3: 判断是否有兄弟节点，若有->递归调用
  */
-var walk_the_DOM = function walk(node, func) {
+var walk_the_DOM_one = function walk(node, func) {
   func(node);
   node = node.firstChild;
   while (node) {
@@ -36,15 +35,23 @@ var walk_the_DOM = function walk(node, func) {
   }
 };
 
-walk_the_DOM(document.body, function (node) {
-  console.log(node);
-});
+var walk_the_DOM_two = function walk_other(node, func) {
+  func(node);
+  if (node.firstChild)
+    walk_other(node.firstChild, func)
+  if (node.nextSibling)
+    walk_other(node.nextSibling, func)
+};
 
-// 上面递归没考虑到第一个DOM的兄弟节点
-// 下面这种写法更容易理解
-function walk(node, func) {
+// 这种写法更容易理解
+function walk_the_DOM_three(node, func) {
   var children = node.childNodes;
   for (var i = 0; i < children.length; i++)
-    walk(children[i], func);
+    walk_the_DOM_three(children[i], func);
   func(node);
 }
+
+// 上面3种写法都是对DOM树递归获取DOM节点
+walk_the_DOM_three(document.body, function (node) {
+  console.log(node)
+})
