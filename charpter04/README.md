@@ -38,7 +38,21 @@
 >- JavaScript高级程序设计(第3版)：在闭包中，匿名函数的执行环境具有全局性，因此其this对象通常指向window `P182`
 
 #### 2: arguments
->arguments并不是一个真正的数组，它只是一个“类似数组”的对象。arguments拥有一个length属性，但它没有任何数组方法
+>1. arguments并不是一个真正的数组，它只是一个“类似数组”的对象。arguments拥有一个length属性，但它没有任何数组方法
+>2. 如何将arguments转换为一个真正的Array
+>``` javascript
+>       var args = Array.prototype.slice.call(arguments);
+>       var args = [].slice.call(arguments);
+>       // ES2015
+>       const args = Array.from(arguments);
+>       const args = [...arguments];
+>```
+>3. 延伸--获取每个对象的类型
+>>``` javascript
+>>       Object.prototype.toString.call(obj);
+>>       Function.prototype.call.bind(Object.prototype.toString)
+>>```
+>>NOTE：判断对象类型不能直接用`obj.toString()`,因为除了类型为`[object Object]`以外的其它对象类型实例均有`toString`方法，也就是说`[].toString()`调用的是`Array`实例本身的`toString`方法，虽然其继承自`Object.prototype`，按照原型继承的查找逻辑，当实例中有`toString`方法时就不会去原型链去查找，这也是为什么用`Object.prototype.toString`来判断对象类型的原因。
 
 #### 3: Function.prototype.method 原型图理解
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/prototype.png" alt="原型图"></p>
