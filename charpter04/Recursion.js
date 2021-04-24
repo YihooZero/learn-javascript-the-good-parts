@@ -55,3 +55,18 @@ function walk_the_DOM_three(node, func) {
 walk_the_DOM_three(document.body, function (node) {
   console.log(node)
 })
+
+// Fibonacci数列递归
+/*
+ * n表示数列的第n项
+ * Step1: 斐波那契数列的第n项为第(n-1)项和第(n-2)的和
+ * Step2: 当n <= 2时为n本身
+ */
+function Fibonacci(n) {
+  if (n > 2) {
+    return Fibonacci(n - 1) + Fibonacci( n - 2 )
+  }
+  return n
+}
+console.log(Fibonacci(10))
+
