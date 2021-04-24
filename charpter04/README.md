@@ -74,7 +74,7 @@
 
 #### 5：作用域链
 某个函数被调用时，会创建一个执行环境及相应的作用域链
- -----
+
 ``` javascript
     function compare(value1, value2) {
        if (value1 < value2) {
@@ -88,7 +88,7 @@
 ```
 **作用域链图解**
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/scopeChain1.png" alt="作用域链图解1"></p>
- ---
+---
 ``` javascript
      function createComparisonFunction(propertyName) {
        return function(object1, object2) {
@@ -108,8 +108,9 @@
 ```
 **作用域链图解**
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/scopeChain2.png" alt="作用域链图解2"></p>
->NOTE1：一般而言，当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域(全局执行环境的变量对象)，compare方法属于这一类
->NOTE2：但是闭包情况又有所不一样，匿名函数从createComparisonFunction()中被返回后，它的作用域链被初始化为包含createComparisonFunction()函数的活动对象和全局变量对象。这样，匿名函数就可以访问在createComparisonFunction()中定义的所有变量。更为重要的是，createComparisonFunction()函数在执行完毕后，其活动对象也不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。当createComparisonFunction()函数返回后，其执行环境的作用域链会被销毁，但它的活动对象仍然会留在内存中；直到匿名函数被销毁后(`compareNames  = null`)，createComparisonFunction()的活动对象才会被销毁。
+
+>- NOTE1：一般而言，当函数执行完毕后，局部活动对象就会被销毁，内存中仅保存全局作用域(全局执行环境的变量对象)，compare方法属于这一类
+>- NOTE2：但是闭包情况又有所不一样，匿名函数从createComparisonFunction()中被返回后，它的作用域链被初始化为包含createComparisonFunction()函数的活动对象和全局变量对象。这样，匿名函数就可以访问在createComparisonFunction()中定义的所有变量。更为重要的是，createComparisonFunction()函数在执行完毕后，其活动对象也不会被销毁，因为匿名函数的作用域链仍然在引用这个活动对象。当createComparisonFunction()函数返回后，其执行环境的作用域链会被销毁，但它的活动对象仍然会留在内存中；直到匿名函数被销毁后(`compareNames  = null`)，createComparisonFunction()的活动对象才会被销毁。
 
 
 #### 6: 闭包
