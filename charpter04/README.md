@@ -88,7 +88,6 @@
 ```
 **作用域链图解**
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/scopeChain1.png" alt="作用域链图解1"></p>
------
 
 ``` javascript
      function createComparisonFunction(propertyName) {
