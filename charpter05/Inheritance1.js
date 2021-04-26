@@ -74,5 +74,6 @@ var myCat = new Cat('Henrietta');
 var says = myCat.says();          // 'meow'
 var purr = myCat.purr(5);      // 'r-r-r-r-r'
 var name = myCat.get_name();      // 'meow Henrietta meow'
+console.log(myCat);
+// TODO:原型图修改
 // 以上原型继承图示参考 https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/inheritance1.png
-
