@@ -6,10 +6,14 @@ Function.prototype.method = function (name, func) {
 }
 
 Function.method('inherits', function (Parent) {
-  console.log(this === Cat)
   this.prototype = new Parent();
   return this;
 })
+// 上面一段代码实际执行的是
+// Function.prototype.inherits = function(Parent) {
+//   this.prototype = new Parent();
+//   return this;
+// }
 
 var Mammal = function (name) {
   this.name = name;
