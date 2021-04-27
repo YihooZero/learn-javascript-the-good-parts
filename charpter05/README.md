@@ -5,3 +5,7 @@
 -  执行构造函数中的代码（为这个新对象添加属性）；
 -  返回新对象。
 
+#### 2、原型链图解
+
+![原型链](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/inheritance2.png)
+

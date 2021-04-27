@@ -6,7 +6,7 @@ Function.prototype.method = function (name, func) {
 }
 
 Function.method('inherits', function (Parent) {
-  console.log(this)
+  console.log(this === Cat)
   this.prototype = new Parent();
   return this;
 })
