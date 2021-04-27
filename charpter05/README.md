@@ -7,5 +7,5 @@
 
 #### 2、原型链图解
 
-![原型链](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/inheritance2.png)
+![原型链](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/Inheritance2.jpg)
 
