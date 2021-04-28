@@ -2,7 +2,6 @@ Function.prototype.method = function (name, func) {
   if (!this.prototype[name]) {
     this.prototype[name] = func;
   }
-  console.log(this)
   return this;
 }
 console.log(Function.__proto__ === Function.prototype)    // true
@@ -57,10 +56,4 @@ var Cat = function (name) {
 
 var cat = new Cat('Yihoo');
 console.log(cat)
-
-// TODO:当method('get_name')与Mammal.prototype.get_name两个方法的get_name相同时，
-//      Cat.prototype没有get_name方法，Mammal.prototype有get_name方法
-//      当method('get_name')与Mammal.prototype.get_name两个方法的get_name不相同时
-//      即method('get_name1')和Mammal.prototype.get_name2
-//      此时Cat.prototype有get_name1方法，Mammal.prototype有get_name2方法
-//      WHY?
+console.log(cat.get_name())
