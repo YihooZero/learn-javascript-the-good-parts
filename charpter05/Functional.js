@@ -37,13 +37,6 @@ var cat = function (spec) {
   };
   return that;
 };
-const obj = {
-  name: 'Bix',
-  saying: 'meow',
-  says: (function mammal() {}),
-  purr: (function cat() {}),
-  get_name: (function cat() {}),
-}
 
 var myCat = cat({ name: 'Henrietta' });
 console.log(myCat.get_name())
