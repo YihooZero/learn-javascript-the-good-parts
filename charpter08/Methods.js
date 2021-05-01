@@ -100,5 +100,5 @@ RegExp.method('test', function (string) {
 
 // 8、String chartAt方法实现
 String.method('charAt', function (pos) {
-  return this.splice(pos, pos + 1);
+  return this.slice(pos, pos + 1);
 });
