@@ -15,7 +15,7 @@
 
 2. 方法实现传送门
 
-   - [Array pop](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/charpter08/Methods.js#L)
+   - [Array pop](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/charpter08/Methods.js#L6)
    - [Array push](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/charpter08/Methods.js#L11)
    - [Array shift](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/charpter08/Methods.js#L22)
    - [Array splice](https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/charpter08/Methods.js#L27)
