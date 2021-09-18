@@ -32,7 +32,7 @@
     };
     console.log(object.getNameFunc()()) // "The Window"
 
-	var name1 = "The Window";
+    var name1 = "The Window";
     var object1 = {
         name1: "My Object1",
         getNameFunc: function() {
