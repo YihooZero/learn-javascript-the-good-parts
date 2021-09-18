@@ -31,10 +31,20 @@
         }
     };
     console.log(object.getNameFunc()()) // "The Window"
+
+	var name1 = "The Window";
+    var object1 = {
+        name1: "My Object1",
+        getNameFunc: function() {
+            return this.name1;
+        }
+    };
+    console.log(object1.getNameFunc()) // "My Object1"
 ```
 
 >**说明**
 >- JavaScript语言精粹：当一个函数并非一个对象的属性时，那么它就是被当作一个函数来调用，以此模式调用函数时，this被绑定到全局对象。归咎于语言设计的错误 `P28`
+>- 注意 `demo` 中 `object` 与 `object1` 的区别
 >- JavaScript高级程序设计(第3版)：在闭包中，匿名函数的执行环境具有全局性，因此其this对象通常指向window `P182`
 
 #### 2: arguments
@@ -86,7 +96,7 @@
 >   - 基本 -> 包装: `new Number(1)`
 >   - 包装 -> 基本: `(new Number(1)).valueOf()`
 
-#### 5：作用域链
+#### 5: 作用域链
 某个函数被调用时，会创建一个执行环境及相应的作用域链
 
 ``` javascript
