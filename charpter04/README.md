@@ -80,8 +80,9 @@
     (new Number(1)) instanceof Number               // true
     
     1..__proto__             === Number.prototype   // true
-    Number.__proto__         === Number.prototype   // true
-    (new Number()).__proto__ === Number.prototype   // true    
+    (new Number()).__proto__ === Number.prototype   // true
+    Number.__proto__         === Number.prototype   // false
+    Number.__proto__         === Function.prototype // true
 ```
 >1. 1是一个常量(基本数据类型)
 >   - `1.__proto__`会报错，原因是这里的`.`发生了歧义，它既可以理解为小数点，也可以理解为获取属性或者方法；这里的`.`紧跟在数字后面，解释器把`.`判断为一个小数点，小数点后面跟属性或者方法自然抛错了
