@@ -60,14 +60,19 @@ console.log(object1.getNameFunc()) // "My Object1"
 >   const args = [...arguments];
 >   ```
 >
->3. 延伸--获取每个对象的类型
+>   3. 延伸--获取每个对象的类型
 >
->   ``` javascript
->     Object.prototype.toString.call(obj);
->     Function.prototype.call.bind(Object.prototype.toString)(obj)
->   ```
+>      ``` javascript
+>        Object.prototype.toString.call(obj)
+>        Function.prototype.call.bind(Object.prototype.toString)(obj)
+>        Function.prototype.apply.bind(Object.prototype.toString)(obj)
+>        Function.prototype.call.call(Object.prototype.toString, obj)
+>        Function.prototype.call.apply(Object.prototype.toString, [obj])
+>        Function.prototype.apply.call(Object.prototype.toString, obj)
+>        Function.prototype.apply.apply(Object.prototype.toString, [obj])
+>      ```
 >
->   **NOTE**：判断对象类型不能直接用`obj.toString()`,因为除了类型为`[object Object]`以外的其它对象类型实例均有`toString`方法，也就是说`[].toString()`调用的是`Array`实例本身的`toString`方法，虽然其继承自`Object.prototype`，按照原型继承的查找逻辑，当实例中有`toString`方法时就不会去原型链去查找，这也是为什么用`Object.prototype.toString`来判断对象类型的原因。
+>      **NOTE**：判断对象类型不能直接用`obj.toString()`,因为除了类型为`[object Object]`以外的其它对象类型实例均有`toString`方法，也就是说`[].toString()`调用的是`Array`实例本身的`toString`方法，虽然其继承自`Object.prototype`，按照原型继承的查找逻辑，当实例中有`toString`方法时就不会去原型链去查找，这也是为什么用`Object.prototype.toString`来判断对象类型的原因。
 
 #### 3: `Function.prototype.method` 原型图理解
 <p align="center"><img width="60%" src="https://github.com/YihooZero/learn-javascript-the-good-parts/blob/main/imgs/prototype.png" alt="原型图"></p>
